@@ -23,7 +23,7 @@ Login in to mongoshell through terminal and run these commands
 - use rating_app
 - db.auth("mongoadmin", "secret")
 
-# Steps to build and Run Api
+# Steps to build and Run Test App
 Before starting the service make sure
 mongo is running and setup is complete if not follow [Mongo Setup](#mongo-setup)
 

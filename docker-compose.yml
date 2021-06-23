@@ -1,0 +1,33 @@
+version: "3"
+
+services:
+  db:
+    container_name: database
+    image: mongo
+    volumes:
+      - ./dump:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongoadmin
+      MONGO_INITDB_ROOT_PASSWORD: secret
+    ports:
+      - "27017:27017"
+    networks:
+      - dev
+
+  user-movie-rating-api:
+    container_name: api
+    build:
+      context: .
+    ports:
+      - "9000:9000"
+    networks:
+      - dev
+    links:
+      - "db:database"
+    depends_on:
+      - db
+
+networks:
+  dev:
+    name: dev
+    driver: bridge

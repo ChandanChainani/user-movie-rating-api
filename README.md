@@ -1,10 +1,10 @@
 # user-movie-rating-api
 
-- Simple Authentication with using email
+- Simple Authentication with email
 - Search movie by name and get related information
 - Logged in admin user can create movie
 - Logged in user can rate or comment on movie
-- Get user rates movies and related comments
+- Get user rated movies and related comments
 
 # Requirements
 ## Minimum

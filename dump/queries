@@ -1,0 +1,114 @@
+/* Drop collections */
+
+// db.users.drop()
+// db.movies.drop()
+// db.ratings.drop()
+// db.comments.drop()
+
+/* create users collection */
+db.createCollection("users", {
+   validator: {
+      $jsonSchema: {
+         bsonType: "object",
+         required: [ "name", "email" ],
+         properties: {
+            name: {
+               bsonType: "string",
+               description: "must be a string and is required"
+            },
+            email: {
+               bsonType: "string",
+							 pattern : "@mongodb\.com$"
+							 description: "must be a string and match the regular expression pattern"
+            },
+            admin: {
+               bsonType: [ "int" ],
+               minimum: 0,
+               maximum: 1,
+               description: "must be an integer in [ 0, 1 ]"
+            },
+         }
+      }
+   }
+})
+/* create movies collection */
+db.createCollection("movies", {
+   validator: {
+      $jsonSchema: {
+         bsonType: "object",
+         required: [ "name", "description" ],
+         properties: {
+            name: {
+               bsonType: "string",
+               description: "must be a string and is required"
+            },
+            description: {
+               bsonType: "string",
+               description: "must be a string and is required"
+            },
+         }
+      }
+   }
+})
+/* create ratings collection */
+db.createCollection("ratings", {
+   validator: {
+      $jsonSchema: {
+         bsonType: "object",
+         required: [ "user_id", "movie_id", "rating" ],
+         properties: {
+            rating: {
+               bsonType: "double",
+               description: "must be a double and is required"
+            }
+         }
+      }
+   }
+})
+/* create comments collection */
+db.createCollection("comments", {
+   validator: {
+      $jsonSchema: {
+         bsonType: "object",
+         required: [ "user_id", "movie_id", "comment" ],
+         properties: {
+            comment: {
+               bsonType: "string",
+               description: "must be a string and is required"
+            }
+         }
+      }
+   }
+})
+
+userIds = db.users.insertMany([
+	{ name: "John", email: "john@mongodb.com" },
+	{ name: "James", email: "james@mongodb.com" },
+	{ name: "Sunny", email: "sunny@mongodb.com" }
+]).insertedIds
+
+movieIds = db.movies.insertMany([
+	{ name: "The One", description: "" },
+	{ name: "Ghost Rider", description: "" },
+	{ name: "Ghost Buster", description: "" }
+]).insertedIds
+
+comments = [];
+ratings = [];
+for (let i = 1; i <= 10; i++) {
+	uID = userIds[Math.floor(Math.random() * 3)];
+	mID = movieIds[Math.floor(Math.random() * 3)];
+  comments.push({
+		comment: 'comment ' + i,
+		user_id: uID,
+		movie_id: mID
+	})
+
+	ratings.push({
+		rating: parseFloat((Math.random() * 5).toFixed(2)),
+		user_id: uID,
+		movie_id: mID
+	});
+}
+db.ratings.insertMany(ratings);
+db.comments.insertMany(comments);

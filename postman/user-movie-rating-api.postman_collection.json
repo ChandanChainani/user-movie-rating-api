@@ -1,0 +1,197 @@
+{
+	"info": {
+		"_postman_id": "74fd0d93-cb70-4c21-80f0-a89851445c5b",
+		"name": "user-movie-rating-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "search-movie-by-name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9001/movie/The One",
+					"host": [
+						"localhost"
+					],
+					"port": "9001",
+					"path": [
+						"movie",
+						"The One"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin-user-login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"john@mongodb.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9001/login",
+					"host": [
+						"localhost"
+					],
+					"port": "9001",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user-rated-movies-comments",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "session=MTYyNDQ1Mzc2N3xEdi1CQkFFQ180SUFBUkFCRUFBQVVmLUNBQUlHYzNSeWFXNW5EQVVBQTNWSlJBWnpkSEpwYm1jTUdnQVlOakJrTXpNeU5EZ3hNREk0WkRWaFlXVXdZbVkwTVdZMEJuTjBjbWx1Wnd3SkFBZHBjMEZrYldsdUJXbHVkRE15QkFJQUFnPT18RgdbQ8SE8kfwIkoO3d8NJcGiBBFOtxAbSvqTqkjjvhU=; Path=/; Expires=Wed, 30 Jun 2021 13:09:27 GMT; Max-Age=604800; HttpOnly",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:9001/user/rated/movies",
+					"host": [
+						"localhost"
+					],
+					"port": "9001",
+					"path": [
+						"user",
+						"rated",
+						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "rate-movie",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "session=MTYyNDQ1Mzc2N3xEdi1CQkFFQ180SUFBUkFCRUFBQVVmLUNBQUlHYzNSeWFXNW5EQVVBQTNWSlJBWnpkSEpwYm1jTUdnQVlOakJrTXpNeU5EZ3hNREk0WkRWaFlXVXdZbVkwTVdZMEJuTjBjbWx1Wnd3SkFBZHBjMEZrYldsdUJXbHVkRE15QkFJQUFnPT18RgdbQ8SE8kfwIkoO3d8NJcGiBBFOtxAbSvqTqkjjvhU=; Path=/; Expires=Wed, 30 Jun 2021 13:09:27 GMT; Max-Age=604800; HttpOnly",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"rate\": 3.0, \"movie_id\": \"60d332491028d5aae0bf41f8\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9001/movie/rating",
+					"host": [
+						"localhost"
+					],
+					"port": "9001",
+					"path": [
+						"movie",
+						"rating"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add-movie",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"name\": \"Diler Daring\", \"description\": \"\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9001/movie",
+					"host": [
+						"localhost"
+					],
+					"port": "9001",
+					"path": [
+						"movie"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "comment-movie",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"comment\": \"my comment\", \"movie_id\": \"60d332491028d5aae0bf41f8\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9001/movie/comment",
+					"host": [
+						"localhost"
+					],
+					"port": "9001",
+					"path": [
+						"movie",
+						"comment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "normal-user-login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"email\": \"johnny@mongodb.com\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9001/login",
+					"host": [
+						"localhost"
+					],
+					"port": "9001",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -29,7 +29,7 @@ mongo is running is setup if not follow [Mongo Setup](#mongo-setup)
 
 Then open the project folder in terminal and run this commands
 - `go build -o main .`
-- then you can run the main binary which has been generate `./main`
+- then you can run the `./main` binary which has been generated
 
 # Note
 - I have added migration functionality that will generate sample data on app starts

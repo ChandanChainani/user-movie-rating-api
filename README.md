@@ -33,5 +33,5 @@ Then open the project folder in terminal and run this commands
 
 # Note
 - I have added migration functionality that will generate sample data on app starts
-- Postman request response collection is stored inside (`postman`)[https://github.com/ChandanChainani/user-movie-rating-api/blob/main/postman/user-movie-rating-api.postman_collection.json] folder
-- mongo queries are stored in (dump/queries.txt)[https://github.com/ChandanChainani/user-movie-rating-api/blob/main/dump/queries.txt]
+- Postman request response collection is stored inside [postman](https://github.com/ChandanChainani/user-movie-rating-api/blob/main/postman/user-movie-rating-api.postman_collection.json) folder
+- mongo queries are stored in [dump/queries.txt]( https://github.com/ChandanChainani/user-movie-rating-api/blob/main/dump/queries.txt )

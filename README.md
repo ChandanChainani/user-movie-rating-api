@@ -25,7 +25,7 @@ Login in to mongoshell through terminal and run these commands
 
 # Steps to build and Run Api
 Before starting the service make sure
-mongo is running is setup if not follow [Mongo Setup](#mongo-setup)
+mongo is running and setup is complete if not follow [Mongo Setup](#mongo-setup)
 
 Then open the project folder in terminal and run this commands
 - `go build -o main .`

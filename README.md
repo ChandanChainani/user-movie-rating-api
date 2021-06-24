@@ -19,9 +19,28 @@
 Then you can simply run from root of the project `sudo docker-compose up`
 
 # Mongo Setup
-Login in to mongoshell through terminal and run these commands
-- use rating_app
-- db.auth("mongoadmin", "secret")
+1) Start MongoDB without access control.
+- `mongod --dbpath /data/db`
+2) Connect to mongo instance
+- `mongo`
+3) switch to admin database and then create user
+`
+use admin
+db.createUser(
+  {
+    user: "mongoadmin",
+    pwd: "secret",
+    roles: [ { role: "readWrite", db: "rating_app" } ]
+  }
+)
+`
+4) Start mongo again with access control
+- `mongod --auth --dbpath /data/db`
+5) Connect and test authentication as the user
+`
+use rating_app
+db.auth("mongoadmin", "secret")
+`
 
 # Steps to build and Run Test App
 Before starting the service make sure

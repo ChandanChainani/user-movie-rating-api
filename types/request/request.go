@@ -18,13 +18,13 @@ type Movie struct {
 }
 
 type UserMovieRating struct {
-	Rating float32  `json:"rating"   validate:"numeric"`
-	UserID string   `json:"user_id"  validate:"required"`
-	MovieID string  `json:"movie_id" validate:"required"`
+	Rating float32  `json:"rating"`
+	UserID string   `json:"user_id"`
+	MovieID string  `json:"movie_id"`
 }
 
 type UserMovieComment struct {
-	Comment string  `json:"comment"  validate:"required"`
-	UserID string   `json:"user_id"  validate:"required"`
-	MovieID string  `json:"movie_id" validate:"required"`
+	Comment string  `json:"comment"`
+	UserID string   `json:"user_id"`
+	MovieID string  `json:"movie_id"`
 }

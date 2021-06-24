@@ -90,7 +90,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{ \"rate\": 3.0, \"movie_id\": \"60d332491028d5aae0bf41f8\" }",
+					"raw": "{ \"rating\": 3, \"movie_id\": \"60d332491028d5aae0bf41f8\" }",
 					"options": {
 						"raw": {
 							"language": "json"

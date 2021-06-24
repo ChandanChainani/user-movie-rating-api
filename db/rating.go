@@ -7,7 +7,7 @@ import (
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 
-	"usermovieratingapi/request"
+	"usermovieratingapi/types/request"
 )
 
 func (db *DB) InsertUserMovieRating(r *request.UserMovieRating) (string, error) {

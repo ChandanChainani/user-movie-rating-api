@@ -8,7 +8,7 @@ import (
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
 
-	"usermovieratingapi/request"
+	"usermovieratingapi/types/request"
 	e "usermovieratingapi/errors"
 )
 

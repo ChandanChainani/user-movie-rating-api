@@ -9,7 +9,7 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 
-	"usermovieratingapi/request"
+	"usermovieratingapi/types/request"
 	e "usermovieratingapi/errors"
 )
 

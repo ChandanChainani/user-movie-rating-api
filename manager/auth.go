@@ -11,7 +11,7 @@ import (
 	"github.com/gorilla/sessions"
 	"github.com/labstack/echo-contrib/session"
 
-	"usermovieratingapi/request"
+	"usermovieratingapi/types/request"
 	e "usermovieratingapi/errors"
 )
 

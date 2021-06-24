@@ -6,7 +6,7 @@ import (
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo-contrib/session"
 
-	"usermovieratingapi/request"
+	"usermovieratingapi/types/request"
 	e "usermovieratingapi/errors"
 )
 

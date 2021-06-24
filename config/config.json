@@ -1,5 +1,5 @@
 {
-  "url": "mongodb://localhost:27017",
+  "url": "mongodb://database:27017",
   "database": "rating_app",
   "user": "mongoadmin",
   "password": "secret"

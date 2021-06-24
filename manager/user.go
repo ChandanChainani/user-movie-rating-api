@@ -39,6 +39,10 @@ func (m *Manager) SaveMovieRate(c echo.Context) error {
 		return echo.NewHTTPError(http.StatusBadRequest, err.Error())
 	}
 
+	if err := c.Validate(u); err != nil {
+		return echo.NewHTTPError(http.StatusBadRequest, err.Error())
+	}
+
 	_, err := m.DB.InsertUserMovieRating(u)
 	if err != nil {
 		return c.JSON(http.StatusInternalServerError, e.RateMovieFailed)
@@ -54,6 +58,10 @@ func (m *Manager) SaveMovieComment(c echo.Context) error {
 	u := new(request.UserMovieComment)
 	u.UserID = sess.Values["uID"].(string)
 	if err := c.Bind(u); err != nil {
+		return echo.NewHTTPError(http.StatusBadRequest, err.Error())
+	}
+
+	if err := c.Validate(u); err != nil {
 		return echo.NewHTTPError(http.StatusBadRequest, err.Error())
 	}
 

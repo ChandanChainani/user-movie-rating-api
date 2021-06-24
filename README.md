@@ -30,7 +30,7 @@ db.createUser(
   {
     user: "mongoadmin",
     pwd: "secret",
-    roles: [ { role: "readWrite", db: "rating_app" } ]
+    roles: [ { role: "dbOwner", db: "rating_app" } ]
   }
 )
 ```

@@ -21,8 +21,10 @@ Then you can simply run from root of the project `sudo docker-compose up`
 # Mongo Setup
 1) Start MongoDB without access control.
 - `mongod --dbpath /data/db`
+
 2) Connect to mongo instance
 - `mongo`
+
 3) switch to admin database and then create user
 ```
 use admin
@@ -34,8 +36,10 @@ db.createUser(
   }
 )
 ```
+
 4) Start mongo again with access control
 - `mongod --auth --dbpath /data/db`
+
 5) Connect and test authentication as the user
 ```
 use rating_app
@@ -46,9 +50,9 @@ db.auth("mongoadmin", "secret")
 Before starting the service make sure
 mongo is running and setup is complete if not follow [Mongo Setup](#mongo-setup)
 
-Then open the project folder in terminal and run this commands
-- `go build -o main .`
-- then you can run the `./main` binary which has been generated
+- change `url` from `mongodb://database:27017` to `mongodb://localhost:27017` in [config/config.json](https://github.com/ChandanChainani/user-movie-rating-api/blob/main/config/config.json)
+- open the project folder in terminal and run `go build -o main .`
+- then you can run the `main` binary which has been generated
 
 # Note
 - I have added migration functionality that will generate sample data on app starts

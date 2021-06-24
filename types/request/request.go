@@ -18,7 +18,7 @@ type Movie struct {
 }
 
 type UserMovieRating struct {
-	Rating float32  `json:"rating"   validate:"required,numeric"`
+	Rating float32  `json:"rating"   validate:"numeric"`
 	UserID string   `json:"user_id"  validate:"required"`
 	MovieID string  `json:"movie_id" validate:"required"`
 }
